@@ -55,7 +55,7 @@
                     }
                     else if(compChoice === "rock"){
                         console.log(`You win! Paper beats Rock`);
-                        return 11;
+                        return 1;
                     }
                     break;
 
@@ -88,15 +88,16 @@
                 let theWinner = playRound(humanSelection,computerSelection);
 
                 if(theWinner === 1) {
-                    humanScore++;
+                    humanScore += 1;
                 }
                 else if (theWinner === -1) {
-                    computerScore++;
+                    computerScore += 1;
                 }
+                console.log(`%cScores -> human: ${humanScore}  computer: ${computerScore}`, "color: yellow;");
             }
 
             if(humanScore > computerScore) {
-                console.log("Congratulations! You won the game.");
+                console.log("%cCongratulations! You won the game.", "color: green; font-weight: bold;");
                 return;
             }
             else if(humanScore < computerScore) {
@@ -104,11 +105,12 @@
                 return;
             }
             else {
-                console.log("It is a draw!!!");
+                console.log("%cIt is a draw!!!", "font-weight: bold;");
                 return;
             }
         }
-        
+
+        playGame();
     </script>
 </body>
 </html>
